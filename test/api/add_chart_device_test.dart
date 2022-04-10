@@ -13,8 +13,13 @@ void main() {
         return Response(jsonEncode(response), 200);
       });
       expect(
-          await addChartService(
-              deviceId: "", chartTitle: "", client: mockHTTPClient),
+          await addChartWithoutAliasService(
+              deviceId: "",
+              chartTitle: "",
+              aliasName: "",
+              uuid: "",
+              types: [],
+              client: mockHTTPClient),
           isA<Left>());
     });
 
@@ -24,8 +29,13 @@ void main() {
         return Response(jsonEncode(response), 401);
       });
       expect(
-          await addChartService(
-              deviceId: "", chartTitle: "", client: mockHTTPClient),
+          await addChartWithoutAliasService(
+              deviceId: "",
+              chartTitle: "",
+              aliasName: "",
+              uuid: "",
+              types: [],
+              client: mockHTTPClient),
           isA<Right>());
     });
 
@@ -39,8 +49,13 @@ void main() {
         return Response(jsonEncode(response), 422);
       });
       expect(
-          await addChartService(
-              deviceId: "", chartTitle: "", client: mockHTTPClient),
+          await addChartWithoutAliasService(
+              deviceId: "",
+              chartTitle: "",
+              aliasName: "",
+              uuid: "",
+              types: [],
+              client: mockHTTPClient),
           isA<Right>());
     });
   });
